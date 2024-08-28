@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+    <!-- Container for updating an existing task in the to-do list -->
+    <div class="container my-3">
+      <h3>Update Todo</h3>
+      <!-- Form to update the task with the specific serial number (sno) -->
+      <form action="/update/{{todo.sno}}" method="POST">
+        <!-- Input field for the to-do task title, pre-filled with the current title -->
+        <div class="form-group">
+          <label for="title">To-Do Task Title</label>
+          <input type="text" class="form-control" name="title" id="title" value="{{todo.title}}" aria-describedby="emailHelp">
+        </div>
+        <!-- Input field for the to-do task description, pre-filled with the current description -->
+        <div class="form-group">
+          <label for="desc">To-Do Task Description</label>
+          <input type="text" class="form-control" name="desc" id="desc" value="{{todo.desc}}">
+        </div>
+        <!-- Submit button to save the updated task -->
+        <button type="submit" class="btn btn-outline-info">Update</button>
+      </form>
+    </div>
+
+    <!-- Optional JavaScript for Bootstrap functionality -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+{% endblock body %}
